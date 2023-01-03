@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login.View.createAcc">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Create Account" HorizontalOptions="Center" FontSize="Title" Margin="0,30,0,10"/>
+            <Entry x:Name="user_Name" Text="{Binding}" Placeholder="User Name"/>
+            <Entry x:Name="email" Text="{Binding}" Placeholder="Email"/>
+            <Entry x:Name="year" Text="{Binding}" Placeholder="Year"/>
+            <Entry x:Name="Pass" Text="{Binding}" Placeholder="Password"/>
+            <Entry x:Name="passconfirm" Text="{Binding}" Placeholder="Password Confirm"/>
+            
+            <Button x:Name="create_acc" Text="Create Account" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
