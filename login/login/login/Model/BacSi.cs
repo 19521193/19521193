@@ -14,4 +14,6 @@ namespace login.Model
         public string img_bs { get; set; }
         public int sdt_bs { get; set; }
     }
+   
+
 }
