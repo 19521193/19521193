@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewModel="clr-namespace:App_do_an.ViewModels"
+             x:Class="App_do_an.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="30,20" Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="25"
+                HorizontalOptions="CenterAndExpand"
+                Text="App khám sức khỏe" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="CenterAndExpand"
+                Text="Login" />
+            <Entry Placeholder="UserName" Text="{Binding User.UserName}" />
+            <Entry
+                Placeholder="Password"
+                ReturnCommand="{Binding LoginCommand}"
+                ReturnType="Done"
+                Text="{Binding User.Password}" 
+                IsPassword="True"/>
+            <Button
+                BackgroundColor="#009900"
+                Command="{Binding LoginCommand}"
+                CornerRadius="10"
+                Text="Sign In"
+                TextColor="#fff" />
+            <Label Text="Don't have an account?" />
+            <Button
+                Command="{Binding SigupCommand}"
+                CornerRadius="10"
+                Text="Create One Account"
+                TextColor="Black" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewModels="clr-namespace:App_do_an.ViewModels"
+             x:Class="App_do_an.Views.SigupPage">
+    <ContentPage.BindingContext>
+        <viewModels:SigupViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="30,20" Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="30"
+                HorizontalOptions="CenterAndExpand"
+                Text="Create Account" />
+            <Entry Placeholder="UserName" Text="{Binding User.UserName}" />
+            <Entry Placeholder="Email" Text="{Binding User.Email}" />
+            <Entry Placeholder="Password" Text="{Binding User.Password}" IsPassword="True"/>
+            <Entry Placeholder="Re-Password" Text="{Binding User.RePassword}" IsPassword="True"/>
+            <Button
+                BackgroundColor="DodgerBlue"
+                Command="{Binding RegisterCommand}"
+                CornerRadius="10"
+                Text="Register"
+                TextColor="#fff" />
+            <Label Text="Don't have an account?" />
+            <Button
+                BackgroundColor="DarkSeaGreen"
+                Command="{Binding SignInCommand}"
+                CornerRadius="10"
+                Text="Sign In"
+                TextColor="#fff" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
