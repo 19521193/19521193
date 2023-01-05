@@ -5,7 +5,6 @@ E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\MainPage.xaml.g.
 E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\View\createAcc.xaml.g.cs
 E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\View\ForgotPassword.xaml.g.cs
 E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\View\LoginPage.xaml.g.cs
-E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\View\MainPage.xaml.g.cs
 E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\login.AssemblyInfoInputs.cache
 E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\login.AssemblyInfo.cs
 E:\LapTrinhDaNenTang\login\login\login\obj\Debug\netstandard2.0\login.csproj.CoreCompileInputs.cache

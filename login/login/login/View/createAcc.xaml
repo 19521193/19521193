@@ -1,17 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewModels="clr-namespace:login.ViewModel"
              x:Class="login.View.createAcc">
+    <ContentPage.BindingContext>
+        <viewModels:SigupViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Create Account" HorizontalOptions="Center" FontSize="Title" Margin="0,30,0,10"/>
-            <Entry x:Name="user_Name" Text="{Binding}" Placeholder="User Name"/>
-            <Entry x:Name="email" Text="{Binding}" Placeholder="Email"/>
-            <Entry x:Name="year" Text="{Binding}" Placeholder="Year"/>
-            <Entry x:Name="Pass" Text="{Binding}" Placeholder="Password"/>
-            <Entry x:Name="passconfirm" Text="{Binding}" Placeholder="Password Confirm"/>
-            
-            <Button x:Name="create_acc" Text="Create Account" />
+        <StackLayout Padding="30,20" Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="30"
+                HorizontalOptions="CenterAndExpand"
+                Text="Create Account" />
+            <Entry Placeholder="UserName" Text="{Binding User.userName}" />
+            <Entry Placeholder="Email" Text="{Binding User.Email}" />
+            <Entry Placeholder="Password" Text="{Binding User.paswword}" />
+            <Entry Placeholder="Re-Password" Text="{Binding User.RePassword}" />
+            <Button
+                BackgroundColor="DodgerBlue"
+                Command="{Binding RegisterCommand}"
+                CornerRadius="10"
+                Text="Register"
+                TextColor="#fff" />
+            <Label Text="Don't have an account?" />
+            <Button
+                BackgroundColor="DarkSeaGreen"
+                Command="{Binding SignInCommand}"
+                CornerRadius="10"
+                Text="Sign In"
+                TextColor="#fff" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

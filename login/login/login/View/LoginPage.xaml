@@ -11,7 +11,7 @@
         <StackLayout>
             <Label Text="Login" HorizontalOptions="Center" FontSize="Title" Margin="0,30,0,10"/>
             <Entry x:Name="UserNameEntry" Text="{Binding UserName}" Placeholder="User Name" Margin="10,10"/>
-            <Entry x:Name="passwordEntry" Text="{Binding Password}" Placeholder="Password" Margin="10,10"/>
+            <Entry x:Name="passwordEntry" Text="{Binding Password}" Placeholder="Password" Margin="10,10" IsPassword="True"/>
             <Label x:Name="LoginMessage" Text="{Binding LoginMessa, Mode=OneWay}" IsVisible="{Binding TurnLoginMessa, Mode=OneWay}" Margin="10,0,0,0"/>
             <Button x:Name="loginButton" Text="Login" TextColor="White" BackgroundColor="#009900" Margin="10,10,10,10"
                     Command="{Binding cmdLogin}"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using login.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace login.View
         public LoginPage()
         {
             InitializeComponent();
+            var vm = (LoginViewModel)BindingContext;
+            if (vm != null)
+            {
+                vm.Navigation = this.Navigation;
+            }
         }
     }
 }

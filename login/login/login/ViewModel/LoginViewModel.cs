@@ -5,6 +5,8 @@ using System.Text;
 using Xamarin.Forms;
 using login.View;
 using login.Services;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace login.ViewModel
 {
@@ -85,8 +87,7 @@ namespace login.ViewModel
             }
         }
 
-
-
+        public INavigation Navigation { get; internal set; }
     }
     
 
