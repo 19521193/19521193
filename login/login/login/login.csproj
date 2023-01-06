@@ -26,7 +26,14 @@
     <EmbeddedResource Update="View\ForgotPassword.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+<<<<<<< Updated upstream:login/login/login/login.csproj
     <EmbeddedResource Update="View\Lichkham.xaml">
+=======
+    <EmbeddedResource Update="page\DsLichKham.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+>>>>>>> Stashed changes:App_do_an/App_do_an/App_do_an/App_do_an.csproj
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ListLichKham.xaml">

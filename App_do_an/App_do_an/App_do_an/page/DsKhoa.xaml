@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_do_an.page.DsKhoa">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="LDsKhoa" RowHeight="150" Margin="5" ItemSelected="LDsKhoa_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid  >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" ></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Img_Khoa}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                        HeightRequest="350" WidthRequest="330" Margin="5"></Image>
+                                <Label Text="{Binding TenKhoa}" Grid.Column="1" Grid.Row="0" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                                       VerticalOptions="Start" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Mota}" Grid.Column="1" Grid.Row="1"  FontSize="Medium" HorizontalTextAlignment="Center"
+                                       VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

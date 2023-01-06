@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_do_an.page.DsLichKham">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Đặt lịch khám " x:Name="TIAddlk" Clicked="TIAddlk_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Danh sách Lịch khám -->
+            <CollectionView x:Name="CVDsLK" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
+                                    <SwipeItem Text="XÓA" BackgroundColor="Red"
+                                               x:Name="SWDelete"
+                                               CommandParameter="{Binding .}"
+                                               Invoked="SWDelete_Invoked"/>
+                                    <SwipeItem Text="SỬA" BackgroundColor="LightGreen"
+                                               x:Name="SWEdit"
+                                               CommandParameter="{Binding .}"
+                                               Invoked="SWEdit_Invoked"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid HeightRequest="60" Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="https://images.freecreatives.com/wp-content/uploads/2016/08/Clinical-Document-Medical-Logo.jpg" 
+                                       Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"/>
+                                <Label Text="{Binding Ten}" FontAttributes="Bold" FontSize="Large"
+                                       VerticalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding TenKhoa}" FontAttributes="Bold" FontSize="Large"
+                                       VerticalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding Thoigian}" FontAttributes="Bold" FontSize="Large"
+                                       VerticalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                                
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
