@@ -2,6 +2,7 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,5 +51,9 @@ namespace App_do_an.Services
             }
             return null;
         }
+
+       
+     
+
     }
 }

@@ -36,7 +36,9 @@ namespace App_do_an.page
             
                 BenhVien location = (BenhVien)List_BenhVien.SelectedItem;
                 Navigation.PushAsync(new DsKhoa(location));
-            
+
+                
+
         }
     }
 }

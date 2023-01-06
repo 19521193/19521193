@@ -11,7 +11,7 @@
                 FontAttributes="Bold"
                 FontSize="25"
                 HorizontalOptions="CenterAndExpand"
-                Text="App khám sức khỏe" />
+                Text="App Đặt lịch khám Online" />
             <Label
                 FontAttributes="Bold"
                 FontSize="20"

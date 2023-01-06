@@ -167,7 +167,8 @@ namespace App_do_an.page
         }
         private void LDsKhoa_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            Khoa khoa = (Khoa)LDsKhoa.SelectedItem;
+            //Navigation.PushAsync(new AddLichKham(khoa));
         }
     }
 }
