@@ -20,16 +20,18 @@ public class MainActivity
 	public MainActivity ()
 	{
 		super ();
-		if (getClass () == MainActivity.class)
+		if (getClass () == MainActivity.class) {
 			mono.android.TypeManager.Activate ("App_do_an.Droid.MainActivity, App_do_an.Android", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 
 	public MainActivity (int p0)
 	{
 		super (p0);
-		if (getClass () == MainActivity.class)
+		if (getClass () == MainActivity.class) {
 			mono.android.TypeManager.Activate ("App_do_an.Droid.MainActivity, App_do_an.Android", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

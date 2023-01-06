@@ -8,7 +8,7 @@
             <Label Text="Danh sách tham khảo"  FontSize="20" TextColor="Black"/>
             <SearchBar Placeholder="Search" TextChanged="SearchBar_Changed"/>
             <Label Text="Recommended" FontSize="18" TextColor="Black"/>
-            <CollectionView x:Name="List_BenhVien">
+            <CollectionView x:Name="List_BenhVien" SelectionMode="Single" SelectionChanged="List_BenhVien_SelectionChanged">
                 <CollectionView.EmptyView>
                     <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text=""/>
                 </CollectionView.EmptyView>

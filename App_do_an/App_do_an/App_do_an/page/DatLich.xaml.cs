@@ -1,4 +1,5 @@
 ﻿using App_do_an.Models;
+//using login.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,14 @@ namespace App_do_an.page
         private void SearchBar_Changed(object sender, TextChangedEventArgs e)
         {
             // List_BenhVien.ItemsSource = list_bv.Where(s => s.Ten_BV.ToLower().Contains(e.NewTextValue.ToLower()));
+        }
+
+        private void List_BenhVien_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+                BenhVien location = (BenhVien)List_BenhVien.SelectedItem;
+                Navigation.PushAsync(new DsKhoa(location));
+            
         }
     }
 }
