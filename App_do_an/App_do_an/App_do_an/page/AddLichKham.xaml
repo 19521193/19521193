@@ -5,51 +5,66 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Đặt lịch khám online" HorizontalTextAlignment="Center" FontSize="Header" TextColor="Black"/>
+            <!--<Label Text="Đặt lịch khám online" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black"/>-->
             <Grid Padding="10">
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition/><!--row 0 -->
+                    <RowDefinition/><!--row 1 -->
+                    <RowDefinition/><!--row 2 -->
+                    <RowDefinition/><!--row 3 -->
+                    <RowDefinition/><!--row 4 -->
+                    <RowDefinition/><!--row 5 -->
+                    <RowDefinition/><!--row 6 -->
+                    <RowDefinition/><!--row 7 -->
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    
                     
                 </Grid.ColumnDefinitions>
                 <Label Text="Họ và Tên :" Grid.Column="0" Grid.Row="0"
                        FontSize="Medium" VerticalOptions="Center"/>
-                <Entry x:Name="txtTen" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Entry x:Name="txtTen" Grid.Column="1" Grid.Row="0" />
                 
                 <Label Text="Tuổi :" Grid.Column="0" Grid.Row="1"
                        FontSize="Medium" VerticalOptions="Center"/>
-                <Entry x:Name="txtTuoi" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Entry x:Name="txtTuoi" Grid.Column="1" Grid.Row="1" />
                 
-                <Label Text="Giới tính :" Grid.Column="0" Grid.Row="2"
+                <Label Text="Giới tính Nam/Nữ:" Grid.Column="0" Grid.Row="2"
                        FontSize="Medium" VerticalOptions="Center"/>
-                <RadioButton x:Name="txtNam" Value="Nam" IsChecked="true" Grid.Column="1" Grid.Row="2" />
-                <RadioButton x:Name="txtNu" Value="Nu" Grid.Column="2" Grid.Row="2" />
+                <Switch x:Name="txtGioiTinh" IsToggled="False" Grid.Column="1" Grid.Row="2" />
 
                 <Label Text="Địa chỉ :" Grid.Column="0" Grid.Row="3"
                        FontSize="Medium" VerticalOptions="Center"/>
-                <Entry x:Name="txtDiaChi" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
-                
-                <Label Text="Thời gian :" Grid.Column="0" Grid.Row="4"
+                <Entry x:Name="txtDiaChi" Grid.Column="1" Grid.Row="3" />
+
+                <Label Text="Khoa :" Grid.Column="0" Grid.Row="4"
                        FontSize="Medium" VerticalOptions="Center" />
-                <Entry x:Name="txtThoiGian" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Picker Title="Chọn khoa " 
+                        x:Name="KhoaPicker" 
+                        ItemDisplayBinding="{Binding Tenkhoalk}"
+                        SelectedIndexChanged="KhoaPicker_SelectedIndexChanged"
+                        
+                        Grid.Column="1" Grid.Row="4">
+                </Picker>
+
+                <Label Text="Thời gian :" Grid.Column="0" Grid.Row="5"
+                       FontSize="Medium" VerticalOptions="Center" />
+                <Picker Title="Chọn thời gian " 
+                        x:Name="ThoiGianPicker"
+                        ItemDisplayBinding="{Binding TgKham}"
+                        SelectedIndexChanged="ThoiGianPicker_SelectedIndexChanged"
+                        Grid.Column="1" Grid.Row="5">
+                </Picker>
                 
-                <Label Text="Thông tin khác :" Grid.Column="0" Grid.Row="5"
+                <Label Text="Thông tin khác :" Grid.Column="0" Grid.Row="6"
                        FontSize="Medium" VerticalOptions="Center"/>
-                <Entry x:Name="txtMoTa" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Entry x:Name="txtMoTa" Grid.Column="1" Grid.Row="6" />
                 
                 
                 <Button x:Name="btnAddLichKham" Text="Lưu lịch khám" Clicked="btnAddLichKham_Clicked"
-                        Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="Center"/>
+                        Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -1178,3 +1178,6 @@ E:\git_hub\19521193\App_do_an\App_do_an\App_do_an.Android\obj\Debug\110\stamp\_C
 E:\git_hub\19521193\App_do_an\App_do_an\App_do_an.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 E:\git_hub\19521193\App_do_an\App_do_an\App_do_an.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 E:\git_hub\19521193\App_do_an\App_do_an\App_do_an.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+E:\git_hub\19521193\App_do_an\App_do_an\App_do_an.Android\obj\Debug\110\res\drawable\plusicon.png
+E:\git_hub\19521193\App_do_an\App_do_an\App_do_an.Android\obj\Debug\110\res\drawable\booking.png
+E:\git_hub\19521193\App_do_an\App_do_an\App_do_an.Android\obj\Debug\110\res\drawable\logolichkham.png

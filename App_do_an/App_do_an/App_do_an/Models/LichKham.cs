@@ -18,4 +18,13 @@ namespace App_do_an.Models
         public string Mota { get; set; }
 
     }
+    public class Khoalk
+    {
+        public int id_khoalk { get; set; }
+        public string Tenkhoalk { get; set; }
+    }
+    public class TG
+    {
+        public string TgKham { get; set; }
+    }
 }

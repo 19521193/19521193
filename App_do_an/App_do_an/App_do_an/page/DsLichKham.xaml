@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_do_an.page.DsLichKham">
+   <!-- <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="TbIAddLichKham" Text="Thêm Lịch khám" Order="Primary" Priority="0" Clicked="TbIAddLichKham_Clicked" />
+    </ContentPage.ToolbarItems> -->
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="CVLichKham" SelectionMode="Single" SelectionChanged="CVLichKham_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
+                                    <SwipeItem Text="Xóa" BackgroundColor="red"
+                                           x:Name="SwDelete"
+                                           CommandParameter="{Binding .}"
+                                           Invoked="SwDelete_Invoked"/>
+                                    <SwipeItem Text="Sửa" BackgroundColor="LightGreen"
+                                           x:Name="SwEdit"
+                                           CommandParameter="{Binding .}"
+                                           Invoked="SWEdit_Invoked"    />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid HeightRequest="60" Padding="10" Margin="0, 3, 0,3" BackgroundColor="LightBlue"   >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="logolichkham.png" 
+                                       Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+                                
+                                <Label Text= " Lịch khám : " FontAttributes="Bold" FontSize="Large"
+                                       VerticalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text= "{Binding id_lk}" FontAttributes="Bold" FontSize="Large" 
+                                       VerticalOptions="Center" Grid.Column="2" Grid.Row="0"/>
+
+                                <Label Text= " Giờ hẹn : " FontAttributes="Bold" FontSize="Large"
+                                       VerticalOptions="Center" Grid.Column="1" Grid.Row="1"/>
+                                <Label Text="{Binding Thoigian} " FontAttributes="Bold" FontSize="Large"
+                                       VerticalOptions="Center" Grid.Column="2" Grid.Row="1"/>
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

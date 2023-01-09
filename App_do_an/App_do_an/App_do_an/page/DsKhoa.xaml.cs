@@ -29,7 +29,7 @@ namespace App_do_an.page
 
                     id_Khoa = 1,
                     id_benhVien = 1,
-                    TenKhoa = "Tim Mạch",
+                    TenKhoa = "Khoa Tim Mạch",
                     Img_Khoa = "https://cih.com.vn/images/09.2019/tim-mach-1.jpg"
                 });
                 LKhoa.Add(new Khoa
@@ -37,7 +37,7 @@ namespace App_do_an.page
 
                     id_Khoa = 2,
                     id_benhVien = 1,
-                    TenKhoa = "Tai mũi họng",
+                    TenKhoa = "Khoa Tai mũi họng",
                     Img_Khoa = "https://khamtaimuihong.vn/wp-content/uploads/2019/07/tai-mui-hong-fa.jpg"
                 }); 
                 LKhoa.Add(new Khoa
@@ -45,7 +45,7 @@ namespace App_do_an.page
 
                     id_Khoa = 3,
                     id_benhVien = 1,
-                    TenKhoa = "Răng hàm mặt ",
+                    TenKhoa = "Khoa Răng hàm mặt ",
                     Img_Khoa = "https://benhviendongdo.com.vn/wp-content/uploads/2018/04/icon-rang-ham-mat.png"
                 });
                 LKhoa.Add(new Khoa
@@ -53,7 +53,7 @@ namespace App_do_an.page
 
                     id_Khoa = 4,
                     id_benhVien = 1,
-                    TenKhoa = "Khám bệnh",
+                    TenKhoa = "Khoa Khám bệnh",
                     Img_Khoa = "https://logoart.vn/blog/wp-content/uploads/2013/03/thiet-ke-logo-tam-y-te.jpg"
                 });
             }
@@ -64,7 +64,7 @@ namespace App_do_an.page
 
                     id_Khoa = 1,
                     id_benhVien = 2,
-                    TenKhoa = "Tim Mạch",
+                    TenKhoa = "Khoa Tim Mạch",
                     Img_Khoa = "https://cih.com.vn/images/09.2019/tim-mach-1.jpg"
                 });
                 LKhoa.Add(new Khoa
@@ -72,7 +72,7 @@ namespace App_do_an.page
 
                     id_Khoa = 2,
                     id_benhVien = 2,
-                    TenKhoa = "Tai mũi họng",
+                    TenKhoa = "Khoa Tai mũi họng",
                     Img_Khoa = "https://khamtaimuihong.vn/wp-content/uploads/2019/07/tai-mui-hong-fa.jpg"
                 });
                 LKhoa.Add(new Khoa
@@ -80,7 +80,7 @@ namespace App_do_an.page
 
                     id_Khoa = 3,
                     id_benhVien = 2,
-                    TenKhoa = "Răng hàm mặt ",
+                    TenKhoa = "Khoa Răng hàm mặt ",
                     Img_Khoa = "https://benhviendongdo.com.vn/wp-content/uploads/2018/04/icon-rang-ham-mat.png"
                 });
                 LKhoa.Add(new Khoa
@@ -88,7 +88,7 @@ namespace App_do_an.page
 
                     id_Khoa = 4,
                     id_benhVien = 2,
-                    TenKhoa = "Khám bệnh",
+                    TenKhoa = "Khoa Khám bệnh",
                     Img_Khoa = "https://logoart.vn/blog/wp-content/uploads/2013/03/thiet-ke-logo-tam-y-te.jpg"
                 });
 
@@ -168,7 +168,12 @@ namespace App_do_an.page
         private void LDsKhoa_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Khoa khoa = (Khoa)LDsKhoa.SelectedItem;
-            //Navigation.PushAsync(new AddLichKham(khoa));
+            Navigation.PushAsync(new DsLichKham(khoa));
+        }
+
+        private void TbIAddLichKham_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddLichKham());
         }
     }
 }

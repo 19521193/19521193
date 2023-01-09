@@ -37,3 +37,6 @@ E:\git_hub\19521193\App_do_an\App_do_an\App_do_an\bin\Debug\netstandard2.0\App_d
 E:\git_hub\19521193\App_do_an\App_do_an\App_do_an\obj\Debug\netstandard2.0\XamlC.stamp
 E:\git_hub\19521193\App_do_an\App_do_an\App_do_an\obj\Debug\netstandard2.0\refint\App_do_an.dll
 E:\git_hub\19521193\App_do_an\App_do_an\App_do_an\obj\Debug\netstandard2.0\ref\App_do_an.dll
+E:\git_hub\19521193\App_do_an\App_do_an\App_do_an\obj\Debug\netstandard2.0\page\AddLichKham.xaml.g.cs
+E:\git_hub\19521193\App_do_an\App_do_an\App_do_an\obj\Debug\netstandard2.0\page\DsLichKham.xaml.g.cs
+E:\git_hub\19521193\App_do_an\App_do_an\App_do_an\obj\Debug\netstandard2.0\page\EditLichKham.xaml.g.cs

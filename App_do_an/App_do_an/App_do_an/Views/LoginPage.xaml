@@ -17,9 +17,9 @@
                 FontSize="20"
                 HorizontalOptions="CenterAndExpand"
                 Text="Login" />
-            <Entry Placeholder="UserName" Text="{Binding User.UserName}" />
+            <Entry Placeholder="Tên tài khoản" Text="{Binding User.UserName}" />
             <Entry
-                Placeholder="Password"
+                Placeholder="Nhập mật khẩu"
                 ReturnCommand="{Binding LoginCommand}"
                 ReturnType="Done"
                 Text="{Binding User.Password}" 
@@ -28,13 +28,13 @@
                 BackgroundColor="#009900"
                 Command="{Binding LoginCommand}"
                 CornerRadius="10"
-                Text="Sign In"
+                Text="Đăng nhập"
                 TextColor="#fff" />
-            <Label Text="Don't have an account?" />
+            <Label Text="Bạn chưa có tài khoản ?" />
             <Button
                 Command="{Binding SigupCommand}"
                 CornerRadius="10"
-                Text="Create One Account"
+                Text="Tạo tài khoản"
                 TextColor="Black" />
         </StackLayout>
     </ContentPage.Content>

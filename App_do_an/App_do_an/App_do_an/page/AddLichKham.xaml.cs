@@ -12,72 +12,107 @@ namespace App_do_an.page
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddLichKham : ContentPage
+     
     {
-        LichKham lk;
+        List<Khoalk> LkKhoa = new List<Khoalk>();
+        List<TG> Tgs = new List<TG>();
+        int idlkPicker;
+        string TgPicker;
         public AddLichKham()
         {
             InitializeComponent();
             Title = "Thêm Lịch hẹn khám bệnh";
+            txtTen.Focus();
+            //thêm thời gian cho picker
+            Tgs.Add(new TG
+            {
+                TgKham = "8 Giờ 30"
+            });
+            Tgs.Add(new TG
+            {
+                TgKham = "9 Giờ 30"
+            });
+            Tgs.Add(new TG
+            {
+                TgKham = "10 Giờ 30"
+            });
+            Tgs.Add(new TG
+            {
+                TgKham = "1 Giờ 30"
+            });
+            Tgs.Add(new TG
+            {
+                TgKham = "2 Giờ 30"
+            });
+            Tgs.Add(new TG
+            {
+                TgKham = "3 Giờ 30"
+            });
+            ThoiGianPicker.ItemsSource = Tgs;
+            //thêm khoa cho picker
+            LkKhoa.Add(new Khoalk
+            {
+                id_khoalk= 1,
+                Tenkhoalk = "Khoa tim mạch"
+            });
+            LkKhoa.Add(new Khoalk
+            {
+                id_khoalk = 2,
+                Tenkhoalk = "Khoa tai mũi họng"
+            });
+            LkKhoa.Add(new Khoalk
+            {
+                id_khoalk = 3,
+                Tenkhoalk = "Khoa răng hàm mặt"
+            });
+            LkKhoa.Add(new Khoalk
+            {
+                id_khoalk = 4,
+                Tenkhoalk = "Khoa khám bệnh"
+            });
+            KhoaPicker.ItemsSource=LkKhoa;
+
+
         }
-      
-        public AddLichKham(LichKham lichkham)
+
+
+        private void KhoaPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InitializeComponent();
-            Title = "Sửa Lịch hẹn";
-            lk = lichkham;
-            txtTen.Text = lichkham.Ten;
-            txtTuoi.Text = lichkham.Tuoi;
-            txtDiaChi.Text = lichkham.DiaChi;
-            txtThoiGian.Text = lichkham.Thoigian;
-            txtMoTa.Text = lichkham.Mota;
+            var selectedKhoa = KhoaPicker.SelectedIndex;
+            idlkPicker = LkKhoa[selectedKhoa].id_khoalk;
 
         }
-
+        private void ThoiGianPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedTg = ThoiGianPicker.SelectedIndex;
+            TgPicker = Tgs[selectedTg].TgKham;
+        }
         private async void btnAddLichKham_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTen.Text) || string.IsNullOrEmpty(txtTuoi.Text)
-                || string.IsNullOrEmpty(txtTuoi.Text)
-                || string.IsNullOrEmpty(txtDiaChi.Text)
-                || string.IsNullOrEmpty(txtThoiGian.Text))
-                
+            LichKham newlichkham = new LichKham();
+            newlichkham.Ten = txtTen.Text;
+            newlichkham.Tuoi = txtTuoi.Text;
+            newlichkham.DiaChi = txtDiaChi.Text;
+            newlichkham.id_khoa = idlkPicker;
+            newlichkham.Thoigian = TgPicker;
+            newlichkham.Mota = txtMoTa.Text;
+            newlichkham.GioiTinh = txtGioiTinh.IsToggled;
+            //LKDatabase db = new LKDatabase();
+            if (App.LKdb.AddnewCity(newlichkham))
+            //if (db.AddnewCity(newlichkham))
             {
-                await DisplayAlert("Thông báo", "Vui lòng điền đầy đủ thông tin!", "Đóng");
-            }
-            else if (lk != null)
-            {
-                lk.Ten = txtTen.Text;
-                lk.Tuoi = txtTuoi.Text;
-                lk.DiaChi = txtDiaChi.Text;
-                lk.Thoigian = txtThoiGian.Text;
-                lk.Mota = txtMoTa.Text;
-                if (txtNam.IsChecked)
-                {
-                    lk.GioiTinh = true;
-                }
-                else
-                    lk.GioiTinh = false;
-
-                App.BookingDb.UpdateCity(_city);
+                await DisplayAlert("Thông báo", "Đặt lịch hẹn thành công", "Ok");
                 await Navigation.PopAsync();
             }
             else
             {
-                City city = new City()
-                {
-                    CityName = txtCityName.Text,
-                    CityImageUrl = txtCityImg.Text
-                };
+                await DisplayAlert("Thông báo", "Đặt lịch hẹn thất bại ", "Ok");
 
-                if (App.BookingDb.CreateCity(city))
-                {
-                    await DisplayAlert("Thông báo", "Thêm mới thành công!", "Cancel");
-                    await Navigation.PopAsync();
-                }
-                else
-                {
-                    await DisplayAlert("Thông báo", "Thêm mới thất bại!", "Cancel");
-                }
             }
+            //Khoa khoa;
+            
         }
+
+      
     }
 }

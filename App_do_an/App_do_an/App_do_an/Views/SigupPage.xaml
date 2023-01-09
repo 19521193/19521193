@@ -11,7 +11,7 @@
                 FontAttributes="Bold"
                 FontSize="30"
                 HorizontalOptions="CenterAndExpand"
-                Text="Create Account" />
+                Text="Tạo tài khoản" />
             <Entry Placeholder="UserName" Text="{Binding User.UserName}" />
             <Entry Placeholder="Email" Text="{Binding User.Email}" />
             <Entry Placeholder="Password" Text="{Binding User.Password}" IsPassword="True"/>
@@ -20,14 +20,14 @@
                 BackgroundColor="DodgerBlue"
                 Command="{Binding RegisterCommand}"
                 CornerRadius="10"
-                Text="Register"
+                Text="Đăng kí"
                 TextColor="#fff" />
-            <Label Text="Don't have an account?" />
+            <Label Text="Bạn đã có tài khoản" />
             <Button
                 BackgroundColor="DarkSeaGreen"
                 Command="{Binding SignInCommand}"
                 CornerRadius="10"
-                Text="Sign In"
+                Text="Đăng nhập"
                 TextColor="#fff" />
         </StackLayout>
     </ContentPage.Content>

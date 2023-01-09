@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_do_an.page.EditLichKham">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Label Text="Đặt lịch khám online" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black"/>-->
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <!--row 0 -->
+                    <RowDefinition/>
+                    <!--row 1 -->
+                    <RowDefinition/>
+                    <!--row 2 -->
+                    <RowDefinition/>
+                    <!--row 3 -->
+                    <RowDefinition/>
+                    <!--row 4 -->
+                    <RowDefinition/>
+                    <!--row 5 -->
+                    <RowDefinition/>
+                    <!--row 6 -->
+                    <RowDefinition/>
+                    <!--row 7 -->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Họ và Tên :" Grid.Column="0" Grid.Row="0"
+                       FontSize="Medium" VerticalOptions="Center"/>
+                <Entry x:Name="txtTen" Grid.Column="1" Grid.Row="0" />
+
+                <Label Text="Tuổi :" Grid.Column="0" Grid.Row="1"
+                       FontSize="Medium" VerticalOptions="Center"/>
+                <Entry x:Name="txtTuoi" Grid.Column="1" Grid.Row="1" />
+
+                <Label Text="Giới tính Nam/Nữ:" Grid.Column="0" Grid.Row="2"
+                       FontSize="Medium" VerticalOptions="Center"/>
+                <Switch x:Name="txtGioiTinh" IsToggled="true" Grid.Column="1" Grid.Row="2" />
+
+                <Label Text="Địa chỉ :" Grid.Column="0" Grid.Row="3"
+                       FontSize="Medium" VerticalOptions="Center"/>
+                <Entry x:Name="txtDiaChi" Grid.Column="1" Grid.Row="3" />
+
+                <Label Text="Khoa :" Grid.Column="0" Grid.Row="4"
+                       FontSize="Medium" VerticalOptions="Center" />
+                <Picker Title="Chọn khoa " 
+                        x:Name="KhoaPicker" 
+                        ItemDisplayBinding="{Binding Tenkhoalk}"
+                        SelectedIndexChanged="KhoaPicker_SelectedIndexChanged"
+                        Grid.Column="1" Grid.Row="4">
+                </Picker>
+
+                <Label Text="Thời gian :" Grid.Column="0" Grid.Row="5"
+                       FontSize="Medium" VerticalOptions="Center" />
+                <Picker Title="Chọn thời gian " 
+                        x:Name="ThoiGianPicker" 
+                        ItemDisplayBinding="{Binding TgKham}"
+                        Grid.Column="1" Grid.Row="5">
+                </Picker>
+
+                <Label Text="Thông tin khác :" Grid.Column="0" Grid.Row="6"
+                       FontSize="Medium" VerticalOptions="Center"/>
+                <Entry x:Name="txtMoTa" Grid.Column="1" Grid.Row="6" />
+
+
+                <Button x:Name="btnAddLichKham" Text="Lưu lịch khám" Clicked="btnAddLichKham_Clicked"
+                        Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
